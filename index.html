@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="">
+
+        <!-- css -->
+        <link rel="stylesheet" href="style.css">
+        <title>トレンド練習</title>
+    </head>
+    <body>
+        <header></header>
+
+        <div class="title" id="title">
+            
+            <h1 class="time" id="time">
+
+                Loding...
+
+            </h1>
+
+            
+        </div>
+        <div>
+            <p id="today"></p>
+        </div>
+
+        <main></main>
+        <footer></footer>
+        <div class="page-top"></div>
+
+
+        <script>
+            // 時間
+            function set2fig(num) {
+                // 桁数が1桁だったら先頭に0を加えて2桁に調整する
+                var ret;
+                if( num < 10 ) { ret = "0" + num; }
+                else { ret = num; }
+                return ret;
+            }
+            function showClock() {
+                var nowTime = new Date();
+                var nowHour = set2fig( nowTime.getHours() );
+                var nowMin  = set2fig( nowTime.getMinutes() );
+                var nowSec  = set2fig( nowTime.getSeconds() );
+                var msg = nowHour + ":" + nowMin ;
+            //  var msg = "現在時刻は、" + nowHour + "時" + nowMin + "分" + nowSec + "秒です。";
+                document.getElementById("time").innerHTML = msg;
+            }
+            setInterval('showClock()',1000);
+
+
+            // 日付
+            const date = new Date()
+            const year = date.getFullYear()
+            const month = date.getMonth() + 1
+            const day = date.getDate()
+
+            const week = date.getDay()
+            const weekItems = ["日", "月", "火", "水", "木", "金", "土"]
+            const dayOfWeek = weekItems[week]
+
+            document.getElementById(
+            "today"
+            ).innerHTML = `${year}年${month}月${day}日(${dayOfWeek})`
+
+        </script>
+        
+    </body>
+</html>
