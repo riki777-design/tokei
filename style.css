@@ -1,28 +1,31 @@
-div.title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-div.title h1 {
-  font-size: 240px;
-  margin: 0 auto;
-  padding-top: 160px;
-  color: rgb(169, 184, 232);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+h1 {
+  font-size: clamp(80px, 30vw, 240px);
+  color: hsl(226deg, 58%, 79%);
 }
-div p {
-  font-size: 40px;
-  margin: 0 auto;
-  color: rgb(169, 184, 232);
+
+p {
+  font-size: clamp(16px, 4vw, 40px);
+  color: hsl(226deg, 58%, 79%);
+}
+
+.container {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  width: auto;
+}
+
+.wraper {
+  display: grid;
+  place-items: center;
 }
 
 body {
-  background: linear-gradient(-135deg, #E4A972, #9941D8) fixed;
+  background: linear-gradient(-135deg, #e4a972, #9941d8) fixed;
 }/*# sourceMappingURL=style.css.map */
