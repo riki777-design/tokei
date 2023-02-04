@@ -24,7 +24,7 @@
         // 桁数が1桁だったら先頭に0を加えて2桁に調整する
         var ret;
         if (num < 10) {
-          ret = "0" + num;
+          ret = '0' + num;
         } else {
           ret = num;
         }
@@ -35,11 +35,11 @@
         var nowHour = set2fig(nowTime.getHours());
         var nowMin = set2fig(nowTime.getMinutes());
         var nowSec = set2fig(nowTime.getSeconds());
-        var msg = nowHour + ":" + nowMin;
+        var msg = nowHour + ':' + nowMin;
         //  var msg = "現在時刻は、" + nowHour + "時" + nowMin + "分" + nowSec + "秒です。";
-        document.getElementById("time").innerHTML = msg;
+        document.getElementById('time').innerHTML = msg;
       }
-      setInterval("showClock()", 1000);
+      setInterval('showClock()', 1000);
 
       // 日付
       const date = new Date();
@@ -48,12 +48,10 @@
       const day = date.getDate();
 
       const week = date.getDay();
-      const weekItems = ["日", "月", "火", "水", "木", "金", "土"];
+      const weekItems = ['日', '月', '火', '水', '木', '金', '土'];
       const dayOfWeek = weekItems[week];
 
-      document.getElementById(
-        "today"
-      ).innerHTML = `${year}年${month}月${day}日(${dayOfWeek})`;
+      document.getElementById('today').innerHTML = `${year}年${month}月${day}日(${dayOfWeek})`;
     </script>
   </body>
 </html>
